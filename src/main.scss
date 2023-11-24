@@ -1,0 +1,178 @@
+@import "./sass/fonts";
+@import "./sass/mixins";
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.background {
+  background-color: #36384d;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background-color: #fff;
+  padding: 3rem;
+  border-radius: 1rem;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  max-width: 1000px;
+  max-height: auto;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-evenly;
+
+  padding: 0 3rem 0 3rem;
+}
+
+.main {
+  &__title {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: #232742;
+    font-weight: bold;
+  }
+
+  &__intro {
+    margin-bottom: 2rem;
+
+    &__email {
+      font-weight: bold;
+    }
+  }
+
+  &__list {
+    margin-bottom: 2rem;
+    list-style: none;
+
+    &__item {
+      margin-bottom: 0.5rem;
+
+      display: flex;
+      align-items: center;
+
+      &::before {
+        content: url("./assets/images/icon-list.svg");
+
+        display: flex;
+        align-items: center;
+        margin-right: 1rem;
+      }
+    }
+  }
+
+  &__success-image {
+    margin-bottom: 2rem;
+  }
+
+  &__button {
+    @include defaultButton(
+      #fff,
+      linear-gradient(to bottom right, #f35274, #fe6a3c),
+      440px
+    );
+    margin: 0 50%;
+    transform: translate(-50%);
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.form {
+  &__text-box {
+    display: flex;
+
+    &__label {
+      margin-bottom: 1rem;
+      font-size: 0.8rem;
+      font-weight: bold;
+      flex: 1;
+    }
+
+    &__error-text {
+      font-size: 0.8rem;
+      color: red;
+      font-weight: bold;
+    }
+  }
+
+  &__input {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 1rem 2rem;
+    font-size: inherit;
+    border-radius: 0.6rem;
+    box-shadow: none;
+    transition: none;
+    border: solid #999 1px;
+
+    &--error {
+      border: solid red 1px;
+      color: red;
+      background-color: #ffe8e6;
+    }
+  }
+
+  &__button {
+    @include defaultButton();
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .background {
+    display: block;
+  }
+
+  .container {
+    display: block;
+    position: absolute;
+    padding: 1rem;
+    max-width: auto;
+    border-radius: 0;
+    height: 100vh;
+  }
+
+  .text-container {
+    padding: 0;
+  }
+
+  .main {
+    &__main-image-mobile {
+      margin: -1rem -1rem 1rem -1rem;
+      width: 100vw;
+    }
+
+    &__button {
+      @include defaultButton();
+
+      display: relative;
+      bottom: 1rem;
+    }
+  }
+}

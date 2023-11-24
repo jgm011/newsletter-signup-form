@@ -1,0 +1,10 @@
+@mixin defaultButton($color: #fff, $background: #232742, $width: 100%) {
+    color: $color;
+    background: $background;
+    width: $width;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 0.6rem;
+    font-size: 1rem;
+    font-weight: bold;
+}
