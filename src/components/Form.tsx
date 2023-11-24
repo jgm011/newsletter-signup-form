@@ -19,6 +19,8 @@ function Form(props: {
     colon !== -1 &&
     at < colon &&
     at !== colon - 1 &&
+    at !== colon - 2 &&
+    at !== colon - 3 &&
     props.email.length > 0 &&
     props.email[colon + 1] &&
     props.email[colon + 2] &&
