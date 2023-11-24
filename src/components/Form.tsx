@@ -8,7 +8,7 @@ function Form(props: {
   const [isWrong, setIsWrong] = useState<boolean>(false);
 
   const at = props.email.indexOf("@");
-  const colon = props.email.indexOf(".");
+  const colon = props.email.lastIndexOf(".");
 
   const emailBasicConditionals =
     at >= 3 &&
