@@ -85,11 +85,7 @@ body {
   }
 
   &__button {
-    @include defaultButton(
-      #fff,
-      linear-gradient(to bottom right, #f35274, #fe6a3c),
-      440px
-    );
+    @include defaultButton(440px);
     margin: 0 50%;
     transform: translate(-50%);
 
@@ -151,7 +147,6 @@ body {
 
   .container {
     display: block;
-    position: absolute;
     padding: 1rem;
     max-width: auto;
     border-radius: 0;
@@ -170,9 +165,6 @@ body {
 
     &__button {
       @include defaultButton();
-
-      display: relative;
-      bottom: 1rem;
     }
   }
 }
