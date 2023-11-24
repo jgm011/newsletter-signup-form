@@ -1,10 +1,15 @@
-@mixin defaultButton($color: #fff, $background: #232742, $width: 100%) {
-    color: $color;
-    background: $background;
+@mixin defaultButton($width: 100%) {
+    color: #fff;
+    background: #232742;
     width: $width;
     border: none;
     padding: 1rem 2rem;
     border-radius: 0.6rem;
     font-size: 1rem;
     font-weight: bold;
+
+    &:hover {
+        background: linear-gradient(to bottom right, #f35274, #fe6a3c);
+        cursor: pointer;
+    }
 }
