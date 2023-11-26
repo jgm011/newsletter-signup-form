@@ -21,7 +21,7 @@ function App() {
 
   return (
     <div className="background">
-      <div className="container">
+      <div className={`container ${success && 'container--success'}`}>
         {!success ? (
           <>
             {screenWidth <= mobileWidth && <MainImageMobile />}
